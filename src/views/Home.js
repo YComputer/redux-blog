@@ -1,21 +1,21 @@
 import React from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import PreviewList from '../components/Home/PreviewList';
-import {listActions} from './HomeRedux';
+import { actions } from './HomeRedux';
+import { push } from 'react-router-redux';
 
-class Home extends React.Component{
-    render() {
-        return (
-            <div>
-                <h1>Home</h1>
-                <PreviewList
-                    {...this.props.list}
-                    {...this.props.listActions}
-                />
-            </div>
-        );
-    }
+class Home extends React.Component {
+  render() {
+    console.log('容器组件的state',this.props)
+    // const { loadArticles, articleList, push } = this.props;
+
+    return (
+      <div>
+        <h1>Home</h1>
+        <PreviewList {...this.props} />
+      </div>
+    );
+  }
 }
 
 export default connect(
@@ -26,9 +26,8 @@ export default connect(
     },
     dispatch => {
         return {
-            listActions: bindActionCreators(listActions, dispatch),
+            push,
+            ...actions,
         }
     }
 )(Home);
-
-

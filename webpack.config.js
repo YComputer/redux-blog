@@ -5,14 +5,14 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'build'),
         filename: 'app.bundle.js',
-        publicPath: '/build'
+        publicPath: '/build/'
     },
     module: {
         loaders: [
             {
                 test: /\.js$/,
                 include: path.join(__dirname, 'src'),
-                loaders: ['babel-loader']
+                loader: 'babel-loader'
             },
             {
                 test: /\.css$/,

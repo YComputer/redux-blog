@@ -6,8 +6,8 @@ class PreviewList extends React.Component {
     loading: React.PropTypes.bool,
     error: React.PropTypes.bool,
     articleList: React.PropTypes.arrayOf(React.PropTypes.object),
-    loadArticles: React.PropTypes.func
-    // push: React.PropTypes.func,
+    loadArticles: React.PropTypes.func,
+    push: React.PropTypes.func,
   };
 
   componentDidMount() {
@@ -15,7 +15,7 @@ class PreviewList extends React.Component {
   }
 
   render() {
-    const { loading, error, articleList } = this.props;
+    const { loading, error, articleList } = this.props.list;
 
     if (error) {
       return <p className="message">Oops, something is wrong.</p>;
@@ -25,10 +25,13 @@ class PreviewList extends React.Component {
       return <p className="message">Loading...</p>;
     }
 
-    return articleList.map((item)=>(
-      <Preview {...item} key={item.id}/>
-    ));
-
+    return (
+      <div>
+        {articleList.map(item => {
+          return <Preview {...item} key={item.id} push={this.props.push} />
+        })}
+      </div>
+    );
   }
 }
 

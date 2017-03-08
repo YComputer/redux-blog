@@ -1,8 +1,5 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
-import { hashHistory } from 'react-router';
-
-import createFetchMiddleware from 'redux-composable-fetch';
 import ThunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers';
 
