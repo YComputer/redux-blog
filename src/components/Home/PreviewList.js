@@ -15,13 +15,14 @@ class PreviewList extends React.Component {
   }
 
   render() {
-    const { loading, error, articleList } = this.props;
-
+    
+    const { loading, error, articleList } = this.props.list;
+    
     if (error) {
       return <p className="message">Oops, something is wrong.</p>;
     }
 
-    if (loading) {
+    if (loading) {      
       return <p className="message">Loading...</p>;
     }
 

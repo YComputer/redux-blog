@@ -4,19 +4,9 @@ import PreviewList from '../components/Home/PreviewList';
 import { actions } from './HomeRedux';
 import { push } from 'react-router-redux';
 
-@connect(state => {
-  return {
-    articleList: state.home.list.articleList,
-  };
-}, {
-  push,
-  ...actions,
-})
+
 class Home extends React.Component {
   render() {
-    console.log('this.props',this.props)
-    const { loadArticles, articleList, push } = this.props;
-
     return (
       <div>
         <h1>Home</h1>
@@ -26,4 +16,11 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default connect(
+  state => {
+    return {
+      list: state.home.list,
+    };
+  },
+  { push, ...actions }
+)(Home);
