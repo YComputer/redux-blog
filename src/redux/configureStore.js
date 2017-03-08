@@ -19,10 +19,6 @@ const reducer = combineReducers({
   routing: routerReducer,
 });
 
-// const reducer = combineReducers(Object.assign({}, rootReducer, {
-//   routing: routerReducer,
-// }));
-
 export default function configureStore(initialState) {
   const store = finalCreateStore(reducer, initialState);
   return store;
