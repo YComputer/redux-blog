@@ -8,10 +8,16 @@ module.exports = {
         publicPath: '/build'
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            include: path.join(__dirname, 'src'),
-            loaders: ['babel-loader']
-        }]
+        loaders: [
+            {
+                test: /\.js$/,
+                include: path.join(__dirname, 'src'),
+                loaders: ['babel-loader']
+            },
+            {
+                test: /\.css$/,
+                loader: "style-loader!css-loader?modules"
+            }
+        ]
     }
 }

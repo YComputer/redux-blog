@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "./node_modules/.bin/webpack --watch",
     "start": "./node_modules/.bin/webpack-dev-server --hot --inline --content-base ."
   },
   "repository": {
@@ -19,13 +18,17 @@
   },
   "homepage": "https://github.com/YComputer/redux-blog#readme",
   "dependencies": {
+    "antd": "^1.6.4",
+    "fetch": "^1.1.0",
     "latest-version": "^3.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
-    "react-router": "^3.0.2",
+    "react-router": "^2.0.0",
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
+    "redux-composable-fetch": "^0.3.4",
+    "redux-thunk": "^2.2.0",
     "whatwg-fetch": "^2.0.2"
   },
   "devDependencies": {
@@ -36,12 +39,14 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.8.0",
+    "css-loader": "^0.26.2",
     "expect.js": "^0.3.1",
     "mocha": "^2.4.5",
     "redux-devtools": "^3.1.1",
     "redux-devtools-dock-monitor": "^1.1.0",
     "redux-devtools-log-monitor": "^1.0.4",
-    "webpack": "^2.2.1",
+    "style-loader": "^0.13.2",
+    "webpack": "^1.14.0",
     "webpack-dev-server": "^1.14.1"
   }
 }
