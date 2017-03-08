@@ -4,10 +4,18 @@ import PreviewList from '../components/Home/PreviewList';
 import { actions } from './HomeRedux';
 import { push } from 'react-router-redux';
 
+@connect(state => {
+  return {
+    articleList: state.home.list.articleList,
+  };
+}, {
+  push,
+  ...actions,
+})
 class Home extends React.Component {
   render() {
-    console.log('容器组件的state',this.props)
-    // const { loadArticles, articleList, push } = this.props;
+    console.log('this.props',this.props)
+    const { loadArticles, articleList, push } = this.props;
 
     return (
       <div>
@@ -18,16 +26,4 @@ class Home extends React.Component {
   }
 }
 
-export default connect(
-    state => {
-        return {
-            list: state.home.list
-        }
-    },
-    dispatch => {
-        return {
-            push,
-            ...actions,
-        }
-    }
-)(Home);
+export default Home;

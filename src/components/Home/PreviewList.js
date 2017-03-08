@@ -15,7 +15,7 @@ class PreviewList extends React.Component {
   }
 
   render() {
-    const { loading, error, articleList } = this.props.list;
+    const { loading, error, articleList } = this.props;
 
     if (error) {
       return <p className="message">Oops, something is wrong.</p>;
