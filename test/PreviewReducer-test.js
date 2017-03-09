@@ -9,7 +9,7 @@ describe('Home', () => {
       title: '测试内容2'
     }];
 
-    // 测试会失败，没有把action中的payload返回到result中
+    // 测试会失败，没有把action中的payload返回到result中，原因还没有搞清楚。
     const result = PreviewReducer({
             loading: true,
             error: false,
