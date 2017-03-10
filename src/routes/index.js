@@ -5,7 +5,7 @@ import Frame from '../layouts/Frame';
 import Home from '../views/Home';
 import Detail from '../views/Detail';
 
-const routes = history => (
+const routes = (history) => (
   <Router history={history}>
     <Route path="/" component={Frame}>
       <IndexRoute component={Home} />
