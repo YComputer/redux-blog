@@ -19,7 +19,7 @@ const FetchMiddleware = createFetchMiddleware({
   },
 });
 
-const finalCreateStore = compose(
+const enhancedCreateStore = compose(
     applyMiddleware(ThunkMiddleware,FetchMiddleware,routerMiddleware(browserHistory)),
     DevTools.instrument()
 )(createStore);
@@ -30,6 +30,22 @@ const reducer = combineReducers({
 });
 
 export default function configureStore(initialState) {
-  const store = finalCreateStore(reducer, initialState);
+  const store = enhancedCreateStore(reducer, initialState);
   return store;
 }
+
+// configureStore 的另外一种写法。
+// const configureStore = () => {
+//     const middlewares = [thunk];
+//     if (process.env.NODE_ENV === 'development') {
+//         middlewares.push(createLogger());
+//     }
+
+//     return createStore(
+//         rootReducer,
+//         compose(
+//             applyMiddleware(...middlewares),
+//             window.devToolsExtension ? window.devToolsExtension() : f => f
+//         )
+//     );
+// };
