@@ -1,0 +1,20 @@
+component可以当作html标签来使用，你定义的componet即标签，可以包含其它componet或者html标签。
+但是在你定义compont的时候，你是不知道将来它会包含什么子内容的，这时候如果你想展示子内容就通过{this.props.children}传递进来。
+
+layouts也是一个组件，描述了一个页面的基本结构包含其它内容组件，目的是将主框架与页面主体内容分离。
+layouts当中的组件，固定内容为页面的主体框架，动态内容是框架内的内容。而动态的内容是通过包含的{this.props.children}传递进来的。
+layout和views都是由路由组件react-router组合在一起的，即<Route path="/" component={Frame}>。
+其实Route也是一个组件，对传入的component再次封装。Route可以再包含子组件，这些子Route组件再包含component。
+然后这些子Route就作为{this.props.children}传递给父组件。
+
+包含什么children，是在routes文件下当中定义包含的。一般layout组件设置在routes的最外层。
+
+routes当中指定的component都应该是放在views下面的组件。
+views下的组件就是redux当中所说的容器型组件，容器组件处理store当中的state，传递给展示型组件，展示型组件放在components下面。
+判断容器组件的一个简单方法就是看是否包含connect方法来把store当中的state以及dispatch映射到展示型组件当中去。
+
+components就是展示型组件，理论上是可以完全脱离数据层而存在的。
+
+
+
+
