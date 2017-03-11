@@ -20,7 +20,7 @@ const FetchMiddleware = createFetchMiddleware({
 });
 
 const enhancedCreateStore = compose(
-    applyMiddleware(ThunkMiddleware,FetchMiddleware,routerMiddleware(browserHistory)),
+    applyMiddleware(ThunkMiddleware, FetchMiddleware, routerMiddleware(hashHistory)),
     DevTools.instrument()
 )(createStore);
 
@@ -40,7 +40,6 @@ export default function configureStore(initialState) {
 //     if (process.env.NODE_ENV === 'development') {
 //         middlewares.push(createLogger());
 //     }
-
 //     return createStore(
 //         rootReducer,
 //         compose(

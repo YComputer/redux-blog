@@ -8,8 +8,8 @@ import routes from './routes';
 import DevTools from './redux/DevTools';
 
 const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
-// const history = syncHistoryWithStore(hashHistory, store);
+// const history = syncHistoryWithStore(browserHistory, store);
+const history = syncHistoryWithStore(hashHistory, store);
 
 ReactDOM.render((
   <Provider store={store}>
