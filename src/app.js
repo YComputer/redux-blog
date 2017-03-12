@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+// require('bootstrap')
 import ReactDOM from 'react-dom';
 import React from 'react';
 import configureStore from './redux/configureStore';
@@ -14,7 +15,7 @@ const history = syncHistoryWithStore(hashHistory, store);
 
 ReactDOM.render((
   <Provider store={store}>
-    <div>
+    <div className='container'>
       {routes(history)}
       <DevTools />
     </div>
