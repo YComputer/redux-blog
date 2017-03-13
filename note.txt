@@ -1,3 +1,7 @@
+理论上<Route path="/detail/:id" component={Detail} 在Route中注入params的方法就是通过path属性，而不能通过<Comp prop={prop}>来注入了。
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 现在使用bootstrap方法是在index.html中直接引入外部资源。更好的方法是将bootstrap源码下载编译到本地项目。
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
