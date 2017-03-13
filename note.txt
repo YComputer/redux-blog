@@ -1,3 +1,7 @@
+现在使用bootstrap方法是在index.html中直接引入外部资源。更好的方法是将bootstrap源码下载编译到本地项目。
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 component可以当作html标签来使用，你定义的componet即标签，可以包含其它componet或者html标签。
 但是在你定义compont的时候，你是不知道将来它会包含什么子内容的，这时候如果你想展示子内容就通过{this.props.children}传递进来。
 

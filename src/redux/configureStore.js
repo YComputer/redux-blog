@@ -7,18 +7,14 @@ import fetchMiddleware from './fetchMiddleware';
 
 import rootReducer from './reducers';
 
+// 添加中间件
 const enhancedCreateStore = compose(
     applyMiddleware(thunkMiddleware, fetchMiddleware, routerMiddleware(hashHistory)),
     DevTools.instrument()
 )(createStore);
 
-const reducer = combineReducers({
-  ...rootReducer,
-  routing: routerReducer,
-});
-
 export default function configureStore(initialState) {
-  const store = enhancedCreateStore(reducer, initialState);
+  const store = enhancedCreateStore(rootReducer, initialState);
   return store;
 }
 
