@@ -10,10 +10,11 @@ const LOAD_ARTICLE_SUCCESS = 'LOAD_ARTICLE_SUCCESS';
 const LOAD_ARTICLE_ERROR = 'LOAD_ARTICLE_ERROR';
 
 // action creators
-export function loadArticle() {
+export function loadArticle(params) {
   return {
     types: [LOAD_ARTICLE, LOAD_ARTICLE_SUCCESS, LOAD_ARTICLE_ERROR],
     url: '/api/article.json',
+    params: params,
   };
 }
 
