@@ -28,7 +28,6 @@
     "react-router": "^2.0.0",
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
-    "redux-composable-fetch": "^0.3.4",
     "redux-thunk": "^2.2.0",
     "whatwg-fetch": "^2.0.2"
   },
