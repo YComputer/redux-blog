@@ -1,3 +1,6 @@
+
+.babelrc 文件的配置是可以写到 package.json当中去的。这就涉及到了webpack读取配置文件的规则和顺序的问题。
+
 理论上<Route path="/detail/:id" component={Detail} 在Route中注入params的方法就是通过path属性，而不能通过<Comp prop={prop}>来注入了。
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
